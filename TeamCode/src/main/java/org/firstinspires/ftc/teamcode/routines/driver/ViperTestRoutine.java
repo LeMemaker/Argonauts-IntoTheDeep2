@@ -19,7 +19,7 @@ public class ViperTestRoutine extends Routine {
     public void onStart() {
 
         while(opModeIsActive()){
-            viperSystem.moveOnTick(gamepad1.dpad_up, gamepad1.dpad_down);
+            viperSystem.moveOnTick(gamepad1.y, gamepad1.a);
 
             telemetry.addData("Left Viper Motor", viperSystem.getViper_motor_l().getCurrentPosition());
             telemetry.addData("Right Viper Motor", viperSystem.getViper_motor_r().getCurrentPosition());

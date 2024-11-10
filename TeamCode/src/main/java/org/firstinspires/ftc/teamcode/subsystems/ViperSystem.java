@@ -20,7 +20,7 @@ public class ViperSystem extends Subsystem{
     }
 
     public void moveOnTick(boolean isUp, boolean isDown){
-        double pow = 10;
+        double pow = 1;
         if(isUp && isDown){
             getViper_motor_l().setPower(0);
             getViper_motor_r().setPower(0);
