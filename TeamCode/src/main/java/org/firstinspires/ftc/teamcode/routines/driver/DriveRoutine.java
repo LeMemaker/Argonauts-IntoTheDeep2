@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.routines.driver;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.routines.Routine;
 import org.firstinspires.ftc.teamcode.subsystems.DriveSystem;
 
-@TeleOp(name = "Drive")
+@Disabled
+@TeleOp(name = "TESTDrive")
 public class DriveRoutine extends Routine {
     DriveSystem driveSystem;
 

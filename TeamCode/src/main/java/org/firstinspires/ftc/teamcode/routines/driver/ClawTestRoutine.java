@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.routines.driver;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.routines.Routine;
 import org.firstinspires.ftc.teamcode.subsystems.ClawSystem;
-
+@Disabled
 @TeleOp(name = "ClawTest")
 public class ClawTestRoutine extends Routine {
     public ClawSystem clawSystem;
