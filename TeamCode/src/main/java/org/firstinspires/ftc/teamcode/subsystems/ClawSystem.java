@@ -36,14 +36,16 @@ public class ClawSystem extends Subsystem
         this.claw_servo_r.setPosition(pos);
     }
 
+    public void setShoulderPos(double pos){
+        this.shoulder_servo.setPosition(pos);
+    }
+
     public void openClaw(){
-        this.claw_servo_l.setPosition(this.OPEN);
-        this.claw_servo_r.setPosition(this.OPEN);
+        this.setClawPos(this.OPEN);
     }
 
     public void closeClaw(){
-        this.claw_servo_l.setPosition(this.CLOSE);
-        this.claw_servo_r.setPosition(this.CLOSE);
+        this.setClawPos(this.CLOSE);
     }
 
     public void toggleClaw(boolean toggle){
@@ -62,6 +64,19 @@ public class ClawSystem extends Subsystem
         }
         else if (!toggle){
             openChanged = false;
+        }
+
+    }
+
+    public void shoulderOnTick(boolean rightBump, boolean leftBump){
+        if(rightBump == leftBump){
+            return;
+        }
+        if(rightBump){
+            setShoulderPos(this.shoulder_servo.getPosition() + 0.001);
+        }
+        if(leftBump){
+            setShoulderPos(this.shoulder_servo.getPosition() - 0.001);
         }
 
     }
