@@ -34,7 +34,7 @@ public class DriveSystem extends Subsystem
     }
 
     public void driveOnTick(double x, double y, double rx) {
-        y = -y;
+        x = -x;
 
         getDrive_motor_fl().setPower(-(y + x + rx));
         getDrive_motor_fr().setPower(-(y - x + rx));
@@ -55,7 +55,7 @@ public class DriveSystem extends Subsystem
         drive_motor_fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         drive_motor_br.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        drive_motor_fr.setDirection(DcMotorSimple.Direction.REVERSE);
-        drive_motor_bl.setDirection(DcMotorSimple.Direction.REVERSE);
+//        drive_motor_fr.setDirection(DcMotorSimple.Direction.REVERSE);
+//        drive_motor_bl.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 }

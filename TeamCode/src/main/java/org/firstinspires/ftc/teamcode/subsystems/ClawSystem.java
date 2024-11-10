@@ -73,10 +73,10 @@ public class ClawSystem extends Subsystem
             return;
         }
         if(rightBump){
-            setShoulderPos(this.shoulder_servo.getPosition() + 0.001);
+            setShoulderPos(this.shoulder_servo.getPosition() + 0.01);
         }
         if(leftBump){
-            setShoulderPos(this.shoulder_servo.getPosition() - 0.001);
+            setShoulderPos(this.shoulder_servo.getPosition() - 0.01);
         }
 
     }
@@ -88,5 +88,8 @@ public class ClawSystem extends Subsystem
         shoulder_servo = routine.hardwareMap.get(Servo.class, "shoulder_servo");
 
         claw_servo_r.setDirection(Servo.Direction.REVERSE);
+
+        shoulder_servo.setPosition(1.0);
+
     }
 }
