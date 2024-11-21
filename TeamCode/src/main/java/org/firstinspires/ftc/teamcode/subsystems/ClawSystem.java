@@ -25,7 +25,7 @@ public class ClawSystem extends Subsystem
         return claw_servo_r;
     }
 
-    final double OPEN = 0.25;
+    final double OPEN = 0;
     final double CLOSE = 0.75;// TEST THEM OUT AFTERNOON
 
     private boolean openChanged = false;
@@ -67,16 +67,16 @@ public class ClawSystem extends Subsystem
         }
 
     }
-
+    //lower bound 0.425, upper bound 0.0
     public void shoulderOnTick(boolean rightBump, boolean leftBump){
         if(rightBump == leftBump){
             return;
         }
-        if(rightBump){
-            setShoulderPos(this.shoulder_servo.getPosition() + 0.01);
+        if(rightBump && this.shoulder_servo.getPosition() <= 0.42){
+            setShoulderPos(this.shoulder_servo.getPosition() + 0.001);
         }
         if(leftBump){
-            setShoulderPos(this.shoulder_servo.getPosition() - 0.01);
+            setShoulderPos(this.shoulder_servo.getPosition() - 0.001);
         }
 
     }
@@ -89,7 +89,8 @@ public class ClawSystem extends Subsystem
 
         claw_servo_r.setDirection(Servo.Direction.REVERSE);
 
-        shoulder_servo.setPosition(1.0);
+        shoulder_servo.setPosition(0.42);
+        this.toggleClaw(true);
 
     }
 }
